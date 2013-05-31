@@ -9,11 +9,10 @@ class UsersController < ApplicationController
   def show
     @user =User.find(params[:id])
     @events=Event.all
-    @events_by_date =@events.group_by(&:dayof)
-     @date = params[:date] ? Date.parse(params[:date]) : Date.today
-    
-    
+    @events_by_date = @events.group_by(&:dayof)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
+ 
  def create
     @user = User.new(params[:user])
     if @user.save
@@ -24,6 +23,7 @@ class UsersController < ApplicationController
       render 'new'
     end
   end
+  
   def edit
     @user = User.find(params[:id])
   end
@@ -32,6 +32,7 @@ class UsersController < ApplicationController
     flash[:success] = "User destroyed."
     redirect_to users_url
   end
+  
    def update
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user])
