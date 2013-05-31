@@ -1,10 +1,13 @@
 class EventsController < ApplicationController
   def new
     @event = Event.new
+    @remind = Remind.new
   end
   
   def create
     @event = Event.new(params[:event])
+    @remind= Remind.new(params[:remind])
+    
     if @event.save
    
       flash[:success] = "Thanks for making a new event!"
