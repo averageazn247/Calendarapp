@@ -25,9 +25,8 @@ class User < ActiveRecord::Base
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
-      def import(file)
-    CSV.foreach(file.path, headers: true) do |row|
-      Question.create! row.to_hash
-    end
-  end
+      
+
+  
+
 end
