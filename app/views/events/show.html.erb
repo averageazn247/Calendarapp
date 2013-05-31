@@ -4,21 +4,14 @@
     <section>
     	<h1> <%= @event.name %></h1>
       <h2>
-        
-        
-        
-       
-        
-        
         <%= @event.dayof%>
       </h2>
-      
-      
     </section>
-     <section>
-     	
-      </section>	
+   <section>  	
+   </section>	
   </aside>
-  
-  <%= link_to "Modify this Event! ", '/edit', class: "btn btn-large btn-primary" %>
 </div>
+
+  <section>
+  	<%= link_to "Modify this Event! ", '/edit' + @event.id.to_s, class: "btn btn-large btn-primary" %>
+  </section>
