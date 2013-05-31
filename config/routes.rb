@@ -1,6 +1,5 @@
 SampleApp::Application.routes.draw do
    
- 
   resources :events
   resources :users
   resources :sessions, only: [:new, :create, :destroy] 
@@ -14,7 +13,7 @@ SampleApp::Application.routes.draw do
   match '/create' , to: 'events#new' 
   match '/edit:id', to: 'events#edit'
   match '/index' , to: 'events#index'
-  
+  match '/users/:id' + :month.to_s, to: 'users#show'
  
   
   #get "static_pages/test"

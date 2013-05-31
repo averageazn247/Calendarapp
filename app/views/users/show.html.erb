@@ -10,7 +10,7 @@
     <section class="calendar">
     
     <h2 id="month">
-    	<%= link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m") %>
+    	<%= link_to "<",:month => (@date.beginning_of_month-1).strftime("%Y-%m") %>
     	<%=h @date.strftime("%B %Y") %>
     	<%= link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m") %>
     </h2>
