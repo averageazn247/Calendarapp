@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531154226) do
+ActiveRecord::Schema.define(:version => 20130531160253) do
 
   create_table "events", :force => true do |t|
     t.string   "user"
@@ -40,6 +40,9 @@ ActiveRecord::Schema.define(:version => 20130531154226) do
     t.boolean  "wedsday"
     t.boolean  "thursday"
     t.boolean  "friday"
+    t.boolean  "sunday"
+    t.boolean  "satday"
+    t.boolean  "weekends"
   end
 
   create_table "users", :force => true do |t|

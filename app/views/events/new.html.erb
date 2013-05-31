@@ -5,17 +5,23 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@event) do |f| %> 
-
+<section>
       <%= f.label " name of event"%>
       <%= f.text_field :name %>
-      
+      </section>
       <%= f.hidden_field :user, :value=> :user%>
       
-      
+      <section>
 	  <%= f.label :date%>
 	  <%= f.text_field :dayof%>
- 
+ </section>
 
+<section>
+	 <%= form_for(@remind) do |r| %> 
+	
+	<%= r.check_box :monday %>
+	<%= r.submit "set reminders ", class: "btn btn btn-primary" %>
+	</section>
  
       <%= f.submit "Create event", class: "btn btn-large btn-primary" %>
     <% end %>
