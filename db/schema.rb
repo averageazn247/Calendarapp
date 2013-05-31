@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531163830) do
+ActiveRecord::Schema.define(:version => 20130531200229) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -22,6 +22,22 @@ ActiveRecord::Schema.define(:version => 20130531163830) do
     t.string   "reminder"
     t.string   "emails"
     t.string   "creator"
+    t.boolean  "sunday"
+    t.boolean  "satday"
+    t.boolean  "weekends"
+    t.boolean  "daily"
+    t.boolean  "weekdays"
+    t.boolean  "weekly"
+    t.boolean  "biweekly"
+    t.boolean  "monthly"
+    t.boolean  "yearly"
+    t.boolean  "semiyearly"
+    t.boolean  "quarterly"
+    t.boolean  "monday"
+    t.boolean  "tuesday"
+    t.boolean  "wedsday"
+    t.boolean  "thursday"
+    t.boolean  "friday"
   end
 
   create_table "reminds", :force => true do |t|
