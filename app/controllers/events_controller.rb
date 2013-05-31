@@ -13,8 +13,23 @@ class EventsController < ApplicationController
       render 'new'
     end 
   end
+  
   def show
      @event = Event.find(params[:id])
+  end
+  
+  def edit
+    @event = Event.find(params[:id])
+  end
+  
+  def update
+    @event = Event.find(params[:id])
+    if @event.update_attributes(params[:event])
+      flash[:success] = "Event Updated!"
+      redirect_to @event
+    else
+      render 'edit'
+    end
   end
   
   def index

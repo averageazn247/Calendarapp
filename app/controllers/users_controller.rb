@@ -27,7 +27,8 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-    def destroy
+  
+  def destroy
     User.find(params[:id]).destroy
     flash[:success] = "User destroyed."
     redirect_to users_url
