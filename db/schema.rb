@@ -11,10 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531160253) do
+ActiveRecord::Schema.define(:version => 20130531163830) do
 
   create_table "events", :force => true do |t|
-    t.string   "user"
     t.string   "name"
     t.text     "description"
     t.date     "dayof"
@@ -22,6 +21,7 @@ ActiveRecord::Schema.define(:version => 20130531160253) do
     t.datetime "updated_at",  :null => false
     t.string   "reminder"
     t.string   "emails"
+    t.string   "creator"
   end
 
   create_table "reminds", :force => true do |t|
