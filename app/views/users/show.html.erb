@@ -1,0 +1,32 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h2>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h2>
+      
+      
+    </section>
+    <section>
+    <%= calendar @date do |date|%>
+    
+
+    <%= date.day %>
+      <% if @events_by_date[date] %>
+      <ul>
+        <% @events_by_date[date].each do |article| %>
+          <li><%= link_to article.name, article %></li>
+        <% end %>
+        <% end %>
+     <% end %>
+    </section>
+     <section>
+     <%= link_to "Create an Event now! ", '/create', class: "btn btn-large btn-primary" %>
+  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+   
+      </section>	
+  </aside>
+  
+</div>
