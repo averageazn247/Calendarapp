@@ -1,15 +1,22 @@
 userall= User.all
 
  userall.each do |user |
-   current= user.event
-   if current.daily
+   allevent= user.event.all
+   allevent.each do |current|
+    if current.daily
     
-   end
-   if current.weekly
+    end
+    if current.weekly
      
-   end
+     end
    
-   if current.monthly
+    if current.monthly
+     
+     end
+     
+     
+     
+     
      
    end
  end
