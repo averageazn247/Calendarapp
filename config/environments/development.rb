@@ -31,6 +31,21 @@ SampleApp::Application.configure do
 
   # Do not compress assets
   config.assets.compress = false
+  
+  #email configs
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
+  
+  config.action_mailer.delivery_method = :smtp
+  config action_mailer.smtp_settings = {
+    :address              => "smpt.gmail.com",
+    :port                 => 587,
+    :domain               => 'gmail.com',
+    :user_name            => 'neuInternChristian@gmail.com',
+    :password             => 'one343NEU',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
+  }
 
   # Expands the lines which load the assets
   config.assets.debug = true
