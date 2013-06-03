@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'mail', 'git@github.com:mikel/mail.git'
 gem 'bootstrap-sass', '2.1'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'sqlite3', '1.3.5'
@@ -12,6 +11,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'simple_form' 
 gem 'rufus-scheduler'
+gem 'mail'
 gem 'whenever', require: false
 group :development, :test do
   gem 'sqlite3', '1.3.5'
