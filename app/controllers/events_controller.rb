@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+  
+  before_filter :set_current_user
+  
+  
   def new
     @event = Event.new
    
@@ -6,8 +10,9 @@ class EventsController < ApplicationController
   end
   
   def create
-    @event = Event.new(params[:event])
- 
+    @user = current_user
+    
+    @event = Event.new(params[:event]) 
     
     if @event.save
    
@@ -38,6 +43,7 @@ class EventsController < ApplicationController
   
   def index
       @events = Event.find(:all)
+      
       @date = params[:month] ? Date.parse(params[:month]) : Date.today
   end
 end

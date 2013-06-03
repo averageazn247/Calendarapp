@@ -26,6 +26,12 @@ class User < ActiveRecord::Base
       self.remember_token = SecureRandom.urlsafe_base64
     end
       
+       def self.current
+    Thread.current[:user]
+  end
+  def self.current=(user)
+    Thread.current[:user] = user
+  end
 
   
 

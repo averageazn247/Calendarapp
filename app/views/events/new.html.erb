@@ -12,7 +12,7 @@
       <%= f.text_area :description %> 
       
       </section>
-      <%= f.hidden_field :creator, :value=> :creator%>
+      <%= f.hidden_field :creator, :value=> current_user.name%>
       
       <section>
 	  <%= f.label :date%>
