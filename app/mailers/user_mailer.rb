@@ -1,9 +1,9 @@
 class UserMailer < ActionMailer::Base
-  default from: "www.neuInternChristian@gmail.com"
+  default :from => "averageazn1337@gmail.com"
   
-  def welcome_email(user)
+  def registration_confirmation(user)
     @user = user
-    @url  = "http://example.com/signup"
-    mail(:to => user.email, :subject => "Welcome to My Awesome Site")
+
+    mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")
   end
 end
