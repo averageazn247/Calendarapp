@@ -11,7 +11,6 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'simple_form' 
 gem 'rufus-scheduler'
-gem 'mail'
 gem 'whenever', require: false
 group :development, :test do
   gem 'sqlite3', '1.3.5'

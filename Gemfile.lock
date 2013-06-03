@@ -212,7 +212,6 @@ DEPENDENCIES
   guard-spork (= 1.2.0)
   jquery-rails
   jquery-ui-rails
-  mail
   pg (= 0.12.2)
   rails (= 3.2.8)
   rspec-rails (= 2.11.0)
