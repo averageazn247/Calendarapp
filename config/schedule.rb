@@ -4,6 +4,7 @@ userall= User.all
    allevent= user.event.all
    allevent.each do |current|
     if current.daily
+      UserMailer.event( user, current)
     
     end
     if current.weekly

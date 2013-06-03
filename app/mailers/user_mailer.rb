@@ -4,6 +4,12 @@ class UserMailer < ActionMailer::Base
   def registration_confirmation(user)
     @user = user
 
-    mail(:to => "#{user.name} <#{user.email}>", :subject => "Registered")
+    mail(:to => "#{user.name} <#{user.email}>", :subject => "Registration")
+  end
+  
+  def event(user,event)
+    @user=user
+    @event= event
+     mail(:to => "#{user.name} <#{user.email}>", :subject => event.name+"reminder" )
   end
 end
