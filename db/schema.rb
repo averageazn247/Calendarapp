@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130531200229) do
+ActiveRecord::Schema.define(:version => 20130603144328) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20130531200229) do
     t.boolean  "wedsday"
     t.boolean  "thursday"
     t.boolean  "friday"
+    t.boolean  "long"
   end
 
   create_table "reminds", :force => true do |t|
