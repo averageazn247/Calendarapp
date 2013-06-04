@@ -11,7 +11,8 @@ class EventsController < ApplicationController
   
   def create
     @user = current_user
-    
+    params[:event].parse_time_select! :start_time
+    params[:event].parse_time_select! :end_time
     @event = Event.new(params[:event]) 
     
     if @event.save
@@ -32,6 +33,8 @@ class EventsController < ApplicationController
   end
   
   def update
+    params[:event].parse_time_select! :start_time
+    params[:event].parse_time_select! :end_time
     @event = Event.find(params[:id])
     if @event.update_attributes(params[:event])
       flash[:success] = "Event Updated!"

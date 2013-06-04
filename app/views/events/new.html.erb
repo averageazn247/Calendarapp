@@ -5,22 +5,49 @@
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(@event) do |f| %> 
-<section>
-      <%= f.label " name of event"%>
-      <%= f.text_field :name %>
-      <%= f.label " Description of event"%>
-      <%= f.text_area :description %> 
-      
+    		<%= render 'shared/event_error_messages' %>
+    
+	  <section>
+	  	<h3>Event Details</h3>
+      	<%= f.label " name of event"%>
+      	<%= f.text_field :name %>
+      	<%= f.label " Description of event"%>
+      	<%= f.text_area :description %> 
+	  	<%= f.label :date%>
+	  	<%= f.text_field :dayof%>
       </section>
-      <%= f.hidden_field :creator, :value=> current_user.name%>
       
       <section>
-	  <%= f.label :date%>
-	  <%= f.text_field :dayof%>
- </section>
-
+      	<h3>Starting at</h3>
+			<%= f.time_select :start_time,
+			  :combined => true,
+			  :default => Time.now.change(:hour => 11, :min => 30),
+			  :minute_interval => 15,
+			  :time_separator => "",
+			  :start_hour => 10,
+  			  :start_minute => 30,
+ 			  :end_hour => 14,
+  			  :end_minute => 30
+			 %>
+      </section>
+      
+      <section>
+      	<h3>Ending at</h3>
+      	<%= f.time_select :end_time,
+			  :combined => true,
+			  :default => Time.now.change(:hour => 11, :min => 30),
+			  :minute_interval => 15,
+			  :time_separator => "",
+			  :start_hour => 10,
+  			  :start_minute => 30,
+ 			  :end_hour => 14,
+  			  :end_minute => 30
+			 %>
+      </section>
+            
+      <%= f.hidden_field :creator, :value=> current_user.name%>
 <section>
- 	Set long Term Reminders
+ 	<h3>Set long Term Reminders</h3>
  	
  	<p>
  		<br> Daily<%= f.radio_button :daily, 'Daily' %> 

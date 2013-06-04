@@ -12,6 +12,7 @@ gem 'jquery-ui-rails'
 gem 'simple_form' 
 gem 'rufus-scheduler'
 gem "mail" 
+gem "combined_time_select", "~> 1.0.0"
 gem 'whenever', require: false
 group :development, :test do
   gem 'sqlite3', '1.3.5'

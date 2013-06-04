@@ -16,6 +16,34 @@
 	  <%= f.label :date%>
   	  <%= f.text_field :dayof%>
   	  
+  	  <section>
+      	Starting at
+			<%= f.time_select :start_time,
+			  :combined => true,
+			  :default => Time.now.change(:hour => 11, :min => 30),
+			  :minute_interval => 15,
+			  :time_separator => "",
+			  :start_hour => 10,
+  			  :start_minute => 30,
+ 			  :end_hour => 14,
+  			  :end_minute => 30
+			 %>
+      </section>
+      
+      <section>
+      	Ending at
+      	<%= f.time_select :end_time,
+			  :combined => true,
+			  :default => Time.now.change(:hour => 11, :min => 30),
+			  :minute_interval => 15,
+			  :time_separator => "",
+			  :start_hour => 10,
+  			  :start_minute => 30,
+ 			  :end_hour => 14,
+  			  :end_minute => 30
+			 %>
+      </section>
+  	  
   	<section>
  	Set long Term Reminders
  	
@@ -38,8 +66,7 @@
  
 	  Set Reminder 
 	  <p>
-	  	
- 			  	Monday: <%= f.check_box :monday %>
+ 		Monday: <%= f.check_box :monday %>
 	  	Tuesday: <%= f.check_box :tuesday %>
 	  	Wednesday: <%= f.check_box :wedsday %>
 	  	Thusday: <%= f.check_box :thursday %>

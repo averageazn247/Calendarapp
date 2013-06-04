@@ -14,8 +14,13 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require jquery.ui.datepicker
+//=require jquery.ui.spinner
 //= require_tree .
 
 $(function (){
         $('#event_dayof').datepicker();
+});
+
+$(function (){
+        $('#event_starttime').spinner();
 });

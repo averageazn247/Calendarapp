@@ -5,9 +5,37 @@
     	<h1> <%= @event.name %></h1>
       <h2>
       	<%= "When: "%>
-        <%= @event.dayof%>
-      </h2>
+        <%= @event.dayof%> 
+      </h2>      
+      <h3>
+      	<%= "Starting: "%>
+      	<% if @event.start_time.hour == 0 %>
+      	<%= "00"%>
+      	<% else %>
+      	<%= @event.start_time.hour%> : 
+      	<% end %>
+      	
+      	<% if @event.start_time.min == 0 then %>
+      	<%= "00"%>
+      	<% else %>
+      	<%= @event.start_time.min%>
+      	<% end %>
+      </h3>
       
+      <h3>
+      	<%= "Ending: "%>
+      	<% if @event.end_time.hour == 0 %>
+      	<%= "00"%>
+      	<% else %>
+      	<%= @event.end_time.hour%> : 
+      	<% end %>
+      	
+      	<% if @event.end_time.min == 0 then %>
+      	<%= "00"%>
+      	<% else %>
+      	<%= @event.end_time.min%>
+      	<% end %>
+      </h3>
           </section>
       <section>
       	Created by :<p><%= @event.creator %>  </p>
