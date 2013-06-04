@@ -9,31 +9,65 @@
       </h2>      
       <h3>
       	<%= "Starting: "%>
-      	<% if @event.start_time.hour == 0 %>
-      	<%= "00"%>
-      	<% else %>
-      	<%= @event.start_time.hour%> : 
-      	<% end %>
-      	
-      	<% if @event.start_time.min == 0 then %>
-      	<%= "00"%>
-      	<% else %>
-      	<%= @event.start_time.min%>
-      	<% end %>
+		<% if @event.start_time.hour > 12 %>
+		 
+			<%= @event.start_time.hour - 12 %>:
+			
+				<% if @event.start_time.min == 0 %>
+				  	00 PM
+				<% else %>
+				
+					<%@event.start_time.min %> PM
+				<% end %>
+			
+			
+		<%else%>
+		 
+			<% @event.start_time.hour %>:
+				<% if @event.start_time.min ==0 %>
+				  	00 PM
+				<% else %>
+				
+					<%@event.start_time.min %> PM
+				<% end %>
+					
+				
+      	<% end%>
       </h3>
       
       <h3>
       	<%= "Ending: "%>
       	<% if @event.end_time.hour == 0 %>
       	<%= "00"%>
+      		
       	<% else %>
-      	<%= @event.end_time.hour%> : 
+      		<% if @event.end_time.hour > 12 %>
+      			<%= @event.end_time.hour - 12  %>: 
+      		<% else %>
+      			<%= @event.end_time.hour %>:
+      			<% end %>
       	<% end %>
       	
       	<% if @event.end_time.min == 0 then %>
-      	<%= "00"%>
+      
+      		<% if @event.end_time.hour > 12 %>
+      			<%= "00 PM"%>
+      		<%else%>
+      			<%= "00 AM"%>
+      			
+      		
+      		<% end %>
       	<% else %>
-      	<%= @event.end_time.min%>
+      		
+
+		<% if @event.end_time.hour > 12 %>		
+      		<%= @event.end_time.min%> PM
+      		
+      		<% else %>
+      		 
+      		<%= @event.end_time.min%> AM
+      		<% end %>
+      	
       	<% end %>
       </h3>
           </section>
