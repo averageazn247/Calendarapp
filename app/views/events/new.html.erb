@@ -17,8 +17,8 @@
 	  	<%= f.text_field :dayof%>
       </section>
       
-      <section>
-      	<h3>Starting at</h3>
+      <section class="time">
+      	Starting at
 			<%= f.time_select :start_time,
 			  :combined => true,
 			  :default => Time.now.change(:hour => 11, :min => 30),
@@ -31,8 +31,8 @@
 			 %>
       </section>
       
-      <section>
-      	<h3>Ending at</h3>
+      <section class="time">
+      	Ending at
       	<%= f.time_select :end_time,
 			  :combined => true,
 			  :default => Time.now.change(:hour => 11, :min => 30),
