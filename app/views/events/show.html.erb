@@ -17,18 +17,18 @@
 				  	00 PM
 				<% else %>
 				
-					<%@event.start_time.min %> PM
+					<%= @event.start_time.min %> PM
 				<% end %>
 			
 			
 		<%else%>
 		 
-			<% @event.start_time.hour %>:
+			<%= @event.start_time.hour %>:
 				<% if @event.start_time.min ==0 %>
 				  	00 PM
 				<% else %>
 				
-					<%@event.start_time.min %> PM
+					<%= @event.start_time.min %> PM
 				<% end %>
 					
 				
