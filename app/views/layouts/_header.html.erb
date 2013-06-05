@@ -4,6 +4,13 @@
       <%= link_to "Rudy on Rails", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
+        	<% if signed_in? %>
+        		 
+        			<% if current_user == Date.today %>
+        				<li>    hi</li>
+        				 
+        			<% end %>
+        	<% end %>
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Help", help_path %></li>
           <% if signed_in? %>

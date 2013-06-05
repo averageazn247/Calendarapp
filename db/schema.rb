@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130604191141) do
+ActiveRecord::Schema.define(:version => 20130605183742) do
 
   create_table "events", :force => true do |t|
     t.string   "name"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(:version => 20130604191141) do
     t.boolean  "long"
     t.time     "start_time"
     t.time     "end_time"
+    t.integer  "userid"
+    t.integer  "eventid"
   end
 
   create_table "reminds", :force => true do |t|
@@ -84,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20130604191141) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.integer  "userid"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
