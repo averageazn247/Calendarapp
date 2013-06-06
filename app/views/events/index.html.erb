@@ -4,7 +4,7 @@
    
  <% @events.each do |event| %>
 	 <div class="event_index">
-	 	<h2><%= link_to event.name, event %>  </h2>
+	 	<h2><%= link_to event.name, event , {:style => "color:red"}%>  </h2>
 	 		Event Day: <b><%= event.dayof %>  </b>
 	 		
 	 		<p>Created by : <%= event.creator%>  </p>
