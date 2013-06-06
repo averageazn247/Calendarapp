@@ -16,7 +16,7 @@ class HolidaysController < ApplicationController
     end 
   end
   def show
-    
+      @holiday = Holiday.find(params[:id])
   end
   
   def index
