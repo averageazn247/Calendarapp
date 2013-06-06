@@ -2,6 +2,7 @@ SampleApp::Application.routes.draw do
    
   resources :events
   resources :users
+  
   resources :sessions, only: [:new, :create, :destroy] 
   root to: 'static_pages#home' 
   match '/signup',  to: 'users#new' 
@@ -14,6 +15,12 @@ SampleApp::Application.routes.draw do
   match '/edit:id', to: 'events#edit'
   match '/index' , to: 'events#index'
   match '/users/:id' + :month.to_s, to: 'users#show'
+  match '/holidays/:id' , to: 'holidays#show'
+  match '/holidays/new' , to: 'holidays#new'
+  match '/holidays/edit' , to: 'holidays#edit'
+  
+  
+  
  
   
   #get "static_pages/test"

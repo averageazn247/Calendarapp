@@ -15,4 +15,11 @@ class HolidaysController < ApplicationController
       render 'new'
     end 
   end
+  def show
+    
+  end
+  
+  def index
+    
+  end
 end
