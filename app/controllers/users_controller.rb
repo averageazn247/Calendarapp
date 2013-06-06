@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   
   def show
     @user =User.find(params[:id])
-    @events=Event.all
+    allevents=Event.all
+    @events= allevents.find(params[:creator==current_user.name])
     @holidays=Holiday.all
     @events_by_date = @events.group_by(&:dayof)
     @holidays_by_date = @holidays.group_by(&:date)
