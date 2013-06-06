@@ -17,7 +17,7 @@ SampleApp::Application.routes.draw do
   match '/users/:id' + :month.to_s, to: 'users#show'
   match '/holidays/:id' , to: 'holidays#show'
   match '/holidays/new' , to: 'holidays#new'
-  match '/holidays/edit' , to: 'holidays#edit'
+  match '/holidays/edit/:id' , to: 'holidays#edit'
   
   
   

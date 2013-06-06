@@ -15,6 +15,21 @@ class HolidaysController < ApplicationController
       render 'new'
     end 
   end
+  
+  def edit
+    @holiday = Holiday.find(params[:id])
+  end
+  
+  def update
+    @holiday = Holiday.find(params[:id])
+    if @holiday.update_attributes(params[:event])
+      flash[:success] = "Event Updated!"
+      redirect_to @holiday
+    else
+      render 'edit'
+    end
+  end
+  
   def show
       @holiday = Holiday.find(params[:id])
   end
