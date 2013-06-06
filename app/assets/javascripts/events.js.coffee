@@ -4,5 +4,3 @@
 jQuery ->
   $('#event_dayof').datepicker
     dateFormat: 'yy-mm-dd'
-jQuery ->
-$('#spinner').spinner({ min: -100, max: 100 });

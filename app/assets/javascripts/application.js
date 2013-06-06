@@ -22,5 +22,5 @@ $(function (){
 });
 
 $(function (){
-        $('#event_starttime').spinner();
+        $('#holiday_date').datepicker();
 });
