@@ -2,7 +2,7 @@ SampleApp::Application.routes.draw do
    
   resources :events
   resources :users
-  
+  resources :holidays
   resources :sessions, only: [:new, :create, :destroy] 
   root to: 'static_pages#home' 
   match '/signup',  to: 'users#new' 
