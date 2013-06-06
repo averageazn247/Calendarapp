@@ -26,7 +26,7 @@
       <% if @holidays_by_date[date] %>
       <ul class="calendar">
         <% @holidays_by_date[date].each do |article| %>
-          <b><li class="calendar"><%= link_to article.name, article %></li></b>
+          <b><li class="calendar"><%= link_to article.name, article , {:style => "color:purple"} %>   </li></b>
         <% end %>
       </ul>
         <% end %> 
@@ -34,7 +34,7 @@
       <% if @events_by_date[date] %>
       <ul class="calendar">
         <% @events_by_date[date].each do |article| %>
-          <li class="calendar"><%= link_to article.name, article %></li>
+          <b><li class="calendar"><%= link_to article.name, article, {:style => "color:red"} %></li></b>
         <% end %>
       </ul>
         <% end %>   
