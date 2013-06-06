@@ -8,8 +8,9 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :name, :email, :password, :password_confirmation, :score,  :remember_token
-  has_many :events , :holidays
-  accept_nested_attributes_for :holidays
+  has_many :events 
+  has_many :holidays
+   
   has_secure_password
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
@@ -21,6 +22,9 @@ class User < ActiveRecord::Base
                     uniqueness: { case_sensitive: false }
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
+  
+  
+  
   private
 
     def create_remember_token
