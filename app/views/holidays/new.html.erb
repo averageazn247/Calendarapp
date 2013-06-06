@@ -11,9 +11,12 @@
 	  	<h3>Event Details</h3>
       	<%= f.label " name of event"%>
       	<%= f.text_field :name %>
-      	<%= f.hidden_field :creator, :value => @user.name %> 
+      	<%= f.hidden_field :creator, :value => @user  %> 
 	  	<%= f.label :date %>
 	  	<%= f.text_field :date%>
+	  	<%= f.submit "Add a holiday for "+@user.to_s  , class: "btn btn-large btn-primary"%>
       </section>
+      
+      <% end %>
    </div>
 </div>
