@@ -9,7 +9,9 @@ class UsersController < ApplicationController
   def show
     @user =User.find(params[:id])
     @events=Event.all
+    @holidays=Holiday.all
     @events_by_date = @events.group_by(&:dayof)
+    @holidays_by_date = @holidays.group_by(&:date)
     @date = params[:date] ? Date.parse(params[:date]) : Date.today
   end
  
