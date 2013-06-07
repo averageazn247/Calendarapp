@@ -37,4 +37,10 @@ class HolidaysController < ApplicationController
   def index
     
   end
+  
+  def destroy
+    Holiday.find(params[:id]).destroy
+    flash[:success] = "Holiday destroyed."
+    redirect_to users_url
+  end
 end

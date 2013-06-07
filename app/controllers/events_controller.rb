@@ -43,6 +43,12 @@ class EventsController < ApplicationController
       render 'edit'
     end
   end
+    
+  def destroy
+    Event.find(params[:id]).destroy
+    flash[:success] = "Event destroyed."
+    redirect_to users_url
+  end
   
   def index
       @events = Event.find(:all)

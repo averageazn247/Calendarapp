@@ -84,4 +84,6 @@
 
   <section>
   	<%= link_to "Modify this Event! ", '/edit' + @event.id.to_s, class: "btn btn-large btn-primary" %>
+  	<%= link_to "delete", @event, method: :delete,
+                 data: { confirm: "You sure?" }, class: "btn btn-large btn-primary" %> 
   </section>
