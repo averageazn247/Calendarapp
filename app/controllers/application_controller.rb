@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  include SMSFu
   include SessionsHelper
   def set_current_user
       User.current = current_user

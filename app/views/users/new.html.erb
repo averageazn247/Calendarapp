@@ -25,6 +25,12 @@
       <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
 
+      <%= f.label :phone, "Phone Number" %>
+      <%= f.text_field :phone %>
+ 
+ 	<%= f.label :carrier, "Carriers "%>
+		<%= f.select :carrier, { "AT&T"=> 'at&t', "Sprint"=>'sprint', "T-Mobile"=>'t-mobile', "Verizon"=>'verizon' }  %>
+       
       <%= f.submit "Create my account", class: "btn btn-large btn-primary" %>
     <% end %>
   </div>
