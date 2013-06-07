@@ -9,15 +9,22 @@
       <%= f.label :name %>
       <%= f.text_field :name %>
 
+ 
+
       <%= f.label :email %>
       <%= f.text_field :email %>
-
+      
       <%= f.label :password %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.label :password_confirmation, "Confirmation" %>
       <%= f.password_field :password_confirmation %>
 
+      <%= f.label :phone, "Phone Number" %>
+      <%= f.text_field :phone %>
+ 
+ 	<%= f.label :carrier, "Carriers "%>
+		<%= f.select :carrier, { "AT&T"=> 'at&t', "Sprint"=>'sprint', "T-Mobile"=>'t-mobile', "Verizon"=>'verizon' }  %>
       <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
     <% end %>
 

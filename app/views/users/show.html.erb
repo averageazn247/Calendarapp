@@ -5,11 +5,24 @@
       <h2>
         <%= gravatar_for @user %>
         <%= @user.name %>
+        
+        
       </h2>
     </section>
     <section>
-    	Email : <b> <%= @user.email %> </b> 
-    	
+    	<p>
+    		Email : <b> <%= @user.email %> </b> 
+    	</p>
+    <p>
+    	Phone : <b><%= @user.phone %></b>
+    </p>	
+    		
+    	<p>
+    		  	
+    	Carrier : <b>  <%= @user.carrier %></b>
+    		
+    		</p>
+  
     </section>
     
     <section>
