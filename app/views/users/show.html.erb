@@ -11,6 +11,25 @@
     	Email : <b> <%= @user.email %> </b> 
     	
     </section>
+    
+    <section>
+    <u><h4> Today's Events </h4></u>
+    <% @holidays.each do |article| %>
+        <% if article.creator == current_user.name%>
+        	<% if article.date == Date.today%>
+        		  <b><li class="calendar"><%= link_to article.name, article, {:style => "color:purple"} %></li></b>
+        		   <% end %>
+        	<% end %>
+        <% end %>
+    <% @events.each do |article| %>
+        <% if article.creator == current_user.name%>
+        	<% if article.dayof == Date.today%>
+        		  <b><li class="calendar"><%= link_to article.name, article, {:style => "color:red"} %></li></b>
+        		   <% end %>
+        	<% end %>
+        <% end %>
+    </section>
+    
     <section class="calendar">
     
     <h2 id="month">
