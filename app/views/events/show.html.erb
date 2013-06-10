@@ -25,10 +25,10 @@
 		 
 			<%= @event.start_time.hour %>:
 				<% if @event.start_time.min ==0 %>
-				  	00 PM
+				  	00 AM
 				<% else %>
 				
-					<%= @event.start_time.min %> PM
+					<%= @event.start_time.min %> AM
 				<% end %>
 					
 				
