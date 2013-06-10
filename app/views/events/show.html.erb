@@ -3,10 +3,10 @@
   <aside class="span4">
     <section>
     	<h1> <%= @event.name %></h1>
-      <h2>
+      <h1>
       	<%= "When: "%>
         <%= @event.dayof%> 
-      </h2>      
+      </h1>      
       <h3>
       	<%= "Starting: "%>
 		<% if @event.start_time.hour > 12 %>
