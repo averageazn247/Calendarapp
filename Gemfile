@@ -12,10 +12,12 @@ gem 'jquery-ui-rails'
 gem 'simple_form' 
 gem 'rufus-scheduler'
 gem "mail" 
+gem 'pony'
+
 gem "combined_time_select", "~> 1.0.0"
 gem 'whenever', require: false
 gem 'sms_fu'
-gem 'pony'
+
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
