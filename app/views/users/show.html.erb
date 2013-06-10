@@ -26,11 +26,13 @@
     </section>
     
     <section>
+    	 <% isevent=0 %>
     <u><h4> Today's Events </h4></u>
     <% @holidays.each do |article| %>
         <% if article.creator == current_user.name%>
         	<% if article.date == Date.today%>
         		  <b><li class="calendar"><%= link_to article.name, article, {:style => "color:purple"} %></li></b>
+        		   <% isevent=1 %>
         		   <% end %>
         	<% end %>
         <% end %>
@@ -38,9 +40,14 @@
         <% if article.creator == current_user.name%>
         	<% if article.dayof == Date.today%>
         		  <b><li class="calendar"><%= link_to article.name, article, {:style => "color:red"} %></li></b>
+        		   <% isevent=1 %>
         		   <% end %>
         	<% end %>
         <% end %>
+     <% if isevent==0 %>
+     			No Interviews today   
+			<p> : (</p>
+     <% end %>   
     </section>
     
     <section class="calendar">
