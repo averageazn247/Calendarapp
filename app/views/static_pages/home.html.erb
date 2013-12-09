@@ -1,24 +1,14 @@
 <div class="center hero-unit">
-  <h1>Welcome to Rudy on Rail's Calendar App</h1>
+  <h1>A* Search</h1>
 
-  <h2>
-    by Khoa Bui And Christian Bullock
-    
-  </h2>
-
- <% if signed_in? %>
- <%= link_to "Create an Event now! ", '/create', class: "btn btn-large btn-primary" %>
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+ <p>
+ 	A* Search is a search algorithm to find the cheapest path from point A to point B. A* search first  is fairly similar to greedy search in that it picks the best path but differs because it also takes into account the previous distance. A common every day AI that could use A* search is a GPS, global positioning system.
+ </p>
   
- <%= link_to "My Current Events! ", current_user, class: "btn btn-large btn-primary" %>
-   &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
- <%= link_to "All Events!", '/index', class: "btn btn-large btn-primary" %>
  
  
- <% else %>
-  <%= link_to "Sign up now! ", signup_path, class: "btn btn-large btn-primary" %>
-  &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-    <%= link_to "Login!", '/signin', class: "btn btn-large btn-primary" %>
-  <% end %>
+ 
+     <%= link_to "A* Search", '/help' , class: "btn btn-primary"%> 
+  
 </div>
  

@@ -1,14 +1,129 @@
-<% provide(:title, 'Help') %>
-<h1>Help</h1>
-<p>
-	New Users: Click "Sign up Now!" on the Home page to sign up!
-</p>
+<% provide(:title, 'A*') %>
+<div class="hero-unit">
+	 <style>
+            .tab {
+            display:none;   
+            }
+        </style>   <script type="text/javascript">
 
-<p>
-	Returning Users: If you forgot to sign out, don't worry! we remember you! 
-	If you haven't signed in, click "Sign In" and provide us with you email and password.
-</p>
+      function activateTab(pageId) {
+          var tabCtrl = document.getElementById('tabCtrl');
+          var pageToActivate = document.getElementById(pageId);
+          for (var i = 0; i < tabCtrl.childNodes.length; i++) {
+              var node = tabCtrl.childNodes[i];
+              if (node.nodeType == 1) { /* Element */
+                  node.style.display = (node == pageToActivate) ? 'block' : 'none';
+              }
+          }
+      }
 
+    </script>
+    </head>
+<h1>A*</h1>
 <p>
-	Events: To create an event, simply press "Create an Event Now!", and follow the on screen directions!
+	 Formula: F(n) = g(n) + h(n)
+	 <br />
+	 F(n)= estimated cost to goal
+	 <br />
+	 g(n)= cost to reach current node from starting
+	 <br />
+	 h(n) = cost to goal from current node or the future cost
+	 <p>
+	 	A* works by taking the known distances and then uses an admissible heuristic that trys to find the closest route.
+	 </p>
 </p>
+ 
+   
+      <li>
+        <a href="javascript:activateTab('page1')">Pseudocode</a>,
+
+        <a href="javascript:activateTab('page2')">Map</a>,
+        <a href="javascript:activateTab('page3')">Step 1</a>,
+        <a href="javascript:activateTab('page4')">Step 2</a>, 
+       <a href="javascript:activateTab('page5')">Step 3</a>,
+           <a href="javascript:activateTab('page6')">Step 4</a>, 
+               <a href="javascript:activateTab('page7')">Step 5</a>, 
+               <a href="javascript:activateTab('page8')">Total Time</a>, 
+               
+      </li>
+    
+    <div id="tabCtrl">
+      <div id="page1" style="display: block;"> <p> <br />
+<table border=0 cellpadding=0 cellspacing=0>
+<tr>
+<td width=50 valign="top"><pre><tt>&nbsp;
+1:
+2:
+3:
+-
+4:
+5:
+6:
+7:
+8:
+9:
+10:
+11:
+12:
+-
+13:
+-
+14:
+-
+15:
+16:
+17:
+18:
+</tt></pre></td>
+<td valign="top"><pre><tt><font>// A*</font>
+initialize the open list
+initialize the closed list
+put the starting node on the open list (you can leave its <b>f</b> at zero)
+
+while the open list is not empty
+    find the node with the least <b>f</b> on the open list, call it "q"
+    pop q off the open list
+    generate q's 8 successors and set their parents to q
+    for each successor
+    	if successor is the goal, stop the search
+        successor.g = q.g + distance between successor and q
+        successor.h = distance from goal to successor
+        successor.f = successor.g + successor.h
+
+        if a node with the same position as successor is in the OPEN list \
+            which has a lower <b>f</b> than successor, skip this successor
+        if a node with the same position as successor is in the CLOSED list \ 
+            which has a lower <b>f</b> than successor, skip this successor
+        otherwise, add the node to the open list
+    end
+    push q on the closed list
+end
+</tt></pre></td>
+</tr>
+</table>
+</p>
+<p>
+	 
+</p>
+<p><br /> from http://web.mit.edu/eranki/www/tutorials/search/</p> 
+      		
+      		
+    </div>
+    <br />
+    
+      <div id="page2" style="display: none;"><img src="map.jpg"   alt="#caption11" style="width: 750px"/> <br />Find path route from Arad to Bucharest </div>
+     <div id="page3" style="display: none;"> <img src="step1.jpg"   alt="#caption11" style="width: 750px"/> <br />Find the shortest path out of the three which is Sibiu, 393= 140 + 253 </div>
+           <div id="page5" style="display: none;"> <img src="step4.jpg"   alt="#caption11" style="width: 750px"/><br /> Check Fagaras childred but since they have higher cost than the parent check the next highest which is Rimnicu Vilcea  </div>
+            <div id="page6" style="display: none;"> <img src="step3.jpg"   alt="#caption11" style="width: 750px"/><br />For for a lower cost on Rimnicu Vilcea </div>
+           <div id="page4" style="display: none;"> <img src="step2.jpg"   alt="#caption11" style="width: 750px"/> <br />Select the lowest cost which is Fagaras,415=239+176  </div>
+ 
+       <div id="page7" style="display: none;"> <img src="step5.jpg"   alt="#caption11" style="width: 750px"/> <br />Select the final spot for a total cost of 418=418 <br /> from p. 116 from Artificial Intelligence</div>
+                
+          <div id="page8" style="display: none;"> A* is as good as its heuristic. A* is optimally efficient for any given heuristic. In the worst case the cost is O(b^d)where d is the solution depth. <br />  <br />  </div>
+                
+                
+      
+    </div>
+   
+  <%= link_to "Home ",  root_path , class: "btn btn-primary"%> 
+</div>
