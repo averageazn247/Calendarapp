@@ -25,7 +25,7 @@ group :development, :test do
   gem 'guard-spork', '1.2.0'
   gem 'childprocess', '0.3.6'
   gem 'spork', '0.9.2'
-
+  gem "better_errors"
 end
 group :development do
   gem 'annotate', '2.5.0'
@@ -34,9 +34,12 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
+  gem 'jquery-ui-rails'
+  gem 'kalendae_assets'
   gem 'sass-rails',   '3.2.5' 
   gem 'uglifier', '1.2.3'
   gem 'coffee-rails'
+  
 end
  
 
