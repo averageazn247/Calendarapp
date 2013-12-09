@@ -32,9 +32,8 @@ body {
   text-align: center;
   
   background-image: url('bg.jpg');
-  /*
-  background-image: -moz-radial-gradient(center, circle farthest-corner, #FFFFFF 0%, #4377EF 100%);
-  */
+ 
+
   background-repeat: repeat;
   
 }
@@ -91,7 +90,7 @@ footer {
   }
 }
 
-/* forms */
+
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
@@ -118,7 +117,7 @@ input {
   @extend .control-group;
   @extend .error;
 }
-/* sidebar */
+
 
 aside {
   section {
