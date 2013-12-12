@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
   attr_accessible :phone, :carrier
   has_many :events 
   has_many :holidays
-   
+  
   has_secure_password
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
