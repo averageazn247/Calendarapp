@@ -12,7 +12,7 @@ gem 'simple_form'
 gem 'rufus-scheduler'
 gem "mail" 
 gem 'pony'
-
+gem 'rails_12factor'
 gem "combined_time_select", "~> 1.0.0"
 gem 'whenever', require: false
 gem 'sms_fu'
